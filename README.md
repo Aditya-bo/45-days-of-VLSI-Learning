@@ -1,2 +1,3 @@
 # 45-days-of-VLSI-Learning
 I have started my VLSI training journey as a beginner. So this repository includes notes, Verilog codes, Simulation &amp; Schematics.
+Author: Aditya Kumar
