@@ -1,0 +1,49 @@
+Introduction to Digital System Design Flow
+
+Digital System Design Flow & FPGA Implementation
+	• Overview: Discussion on the steps involved in digital system design and FPGA implementation.
+	• ASIC (Application Specific Integrated Circuit) Design Flow:
+		○ Design Specification: Initial step where the circuit requirements are specified (e.g., designing a controller for a drone or a Bitcoin miner).
+		○ Architecture Design: Deciding on the coding techniques to be used.
+		○ RTL Modeling: Register Transfer Level modeling is performed, where the circuit design is prepared.
+		○ Synthesis: Converting the modeled circuit into an actual circuit. Up to this point, all processes are software-based, focusing on estimation (area, power, delay) before actual fabrication.
+		○ Physical Design, Layout, and Fabrication: Once all software-based processes are complete, physical design and layout are finalized, leading to the fabrication of the chip.
+
+Front End and Back End of Design Flow
+	• Front End: Comprises design specification, architecture design, RTL modeling, and synthesis.
+	• Back End: Involves physical design, layout, and fabrication.
+
+Design Hierarchy & Divide and Conquer Technique
+	• Divide and Conquer Technique: The system design is broken down into smaller tasks to manage complexity.
+	• Leaf Nodes: Smaller subsystems that make up the larger system. These are identified, designed, connected, and integrated to build the entire circuit.
+
+Example - 4-bit Adder
+	• Task Breakdown: To implement a 4-bit adder (adds two 4-bit numbers A and B, with potential carry).
+		○ 1-bit Adder: Use multiple 1-bit adders to construct a 4-bit adder, applying the divide and conquer strategy.
+		○ Analogy: Designing a car by breaking down the task into body design, engine design, interior, and electronics, and combining these to create the final product.
+
+RTL Design and Logic Synthesis
+	• RTL Design:
+		○ Phase: Used in the logic design phase of integrated circuit design.
+		○ High-Level Representation: Creation of circuit representation using text-based coding in HDLs (Hardware Description Languages).
+		○ Estimation: Helps estimate area, power consumption, and speed of operation.
+	• Logic Synthesis:
+		○ Conversion: Converts RTL design into logic gate implementation.
+		○ Tools: Some tools target PLAs (Programmable Logic Arrays) while others focus on FPGAs (Field Programmable Gate Arrays).
+		○ Focus on FPGAs: The session emphasizes FPGAs due to their advanced capabilities.
+		○ Tasks: Involves adding clocks, memory elements, and optimizing area and power requirements.
+
+Physical Design and Layout Design
+	• Physical Design:
+		○ Geometric Shapes: Circuit components are represented as geometric shapes, known as integrated circuit layouts.
+		○ Steps: Involves floor planning, partitioning, placement, clock tree synthesis, routing, and physical verification.
+	• Layout Design:
+		○ Fabrication: Discusses the arrangement of metals and semiconductors on a semiconductor die.
+		○ Historical Context: Known as the taping process, involving careful control of chemical, thermal, and photographic variables.
+
+FPGA Design Flow
+	• FPGA Overview:
+		○ Reconfigurable Units: FPGAs can be reprogrammed to function as different digital systems.
+		○ Design Source File: The process begins with a Verilog file, which is synthesized into a circuit.
+		○ Bitstream File Generation: Contains information for transforming the design into an FPGA circuit.
+		○ Implementation: The bitstream file is uploaded to the FPGA, which then behaves according to the programmed design.
