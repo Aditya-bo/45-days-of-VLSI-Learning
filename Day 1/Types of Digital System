@@ -1,0 +1,52 @@
+Introduction to Digital Systems
+• There are two main categories of digital systems:
+		1. Combinational Systems
+		2. Sequential Systems
+		
+Overview of Digital Systems and Circuits 
+	• Digital Circuits and Systems:
+		○ Smaller assemblies are called circuits, and larger assemblies made from multiple circuits are called systems.
+		○ Digital systems are categorized into:
+			1. Combinational Circuits
+			2. Sequential Circuits
+
+  • Combinational Circuits:
+		○ These circuits do not have memory and their outputs depend only on the current input values.
+		○ Implementation requires only logic gates such as AND, OR, NAND, NOT, NOR, Exclusive OR, Exclusive NOR, etc.
+		○ These circuits are primarily used for arithmetic operations like addition, multiplication, and square root calculations.
+		○ Block Diagram: Shows how multiple inputs can be logically connected using gates to generate one or more outputs.
+		○ Examples:
+			§ Arithmetic operations like addition, multiplication, and finding the square root.
+		○ Standard Combinational Blocks and Modules:
+			§ Instead of writing code repeatedly for the same circuit, blocks and modules are created.
+
+Sequential Circuits 
+	• Sequential Circuits:
+		○ These circuits have memory elements, allowing them to track previous output values.
+		○ Used as the building blocks for memory elements like RAM (Random Access Memory) and ROM (Read Only Memory).
+		○ Block Diagram: Includes a feedback loop where part of the output is fed back into the input.
+		○ Example:
+			§ Counting from 1 to 5: The output at each step depends on the previous output, demonstrating the need for memory.
+		○ Standard Sequential Blocks and Modules:
+			§ Latches: Basic elements that can hold one bit of data.
+			§ Flip Flops: Similar to latches with slight differences.
+			§ Registers: Combinations of multiple flip flops; when they shift data, they become shift registers.
+			§ Other elements include counters, RAM (both dynamic and static), and finite state machines.
+			
+Comparison 
+	• Comparison between Combinational and Sequential Circuits:
+		○ Output Dependency:
+			§ Combinational circuits depend only on current input values.
+			§ Sequential circuits depend on both current and past input values.
+		○ Speed:
+			§ Combinational circuits are faster.
+			§ Sequential circuits are slower due to memory elements.
+		○ Triggering Signals:
+			§ Combinational circuits do not require triggering signals.
+			§ Sequential circuits require edge or level triggered signals, typically provided by a clock.
+		○ Components:
+			§ Combinational circuits are made purely of logic gates.
+			§ Sequential circuits require flip flops.
+		○ Applications:
+			§ Combinational circuits are used for arithmetic and logical operations.
+			§ Sequential circuits are used for data storage and memory-related applications.
