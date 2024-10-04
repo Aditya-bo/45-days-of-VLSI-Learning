@@ -1,0 +1,31 @@
+Domains in VLSI:
+	• Frontend:
+		○ Focuses on logic design and verification.
+		○ Requires strong knowledge of digital design using Hardware Descriptive Languages (HDLs) such as Verilog or VHDL.
+		○ Suitable for those interested in logical system design and implementation.
+	• Backend:
+		○ Focuses on the physical design and layout of chips, including the manufacturing process.
+		○ Requires knowledge of ASIC (Application-Specific Integrated Circuit) flow, functional simulation, synthesis, and timing analysis.
+		○ Involves analog design, CMOS concepts, analog circuits, and scripting languages for automation.
+		○ Includes tasks like designing memory elements (e.g., SRAM, DRAM) and physical design techniques.
+		
+Career Options in the VLSI Industry:
+	1. Design Engineer:
+		○ Works on the frontend to design systems for ASIC or FPGA.
+		○ May also work on backend tasks, including analog and mixed-signal designs, design for testability, and PCB design.
+		○ Responsible for developing libraries for other engineers and focuses on constructing and designing the logic of complete systems.
+	2. Verification Engineer:
+		○ Works on frontend verification, ensuring the design created by the design engineer functions correctly.
+		○ May also work as a validation engineer, modeling engineer, or consultant in verification tasks.
+		○ Main role is to detect faults, optimization errors, and verify the correctness of the design.
+	3. CAD Engineer:
+		○ Responsible for managing licenses and EDA (Electronic Design Automation) tools.
+		○ Evaluates EDA solutions and integrates various EDA tools to develop workflows.
+		○ Ensures design and verification teams work with compatible and non-contradictory tools.
+	4. Application Engineer:
+		○ Acts as an interface between the research and development team and customers.
+		○ Roles include field application engineer for pre-sales and corporate application engineer for post-sales.
+		○ Requires deep technical knowledge to effectively sell and present products to customers.
+	5. Marketing and Sales:
+		○ Focuses on promoting the brand and selling products.
+		○ A good application engineer can transition to marketing or sales, responsible for client contact, product demos, and post-sale services.
