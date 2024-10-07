@@ -1,0 +1,8 @@
+Today I downloaded the Xilinx Vivado Design Suite software.
+
+Objective: Familiarize with the basic syntax of Verilog programming.
+
+1. Open vivado & create a new project.
+2. Add the file name to my project.
+3. Write basic syntax & design according to it.
+4. Simulate according to the truth table.
