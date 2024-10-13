@@ -1,0 +1,23 @@
+Overview of Coding Styles
+	• Three levels of abstraction: behavioral, data flow, gate level.
+	• Data flow and behavioral coding are often combined into a common style.
+	• Thus, there are two main coding styles:
+		○ Data flow/behavioral modeling
+		○ Gate level modeling
+		
+Data Flow Modeling
+	• Defines system functionality using functions without specifying gate-level structures.
+	• Utilizes various operators acting on operands to produce the desired output.
+	• Increasingly popular with advanced systems and EDA tools.
+	• Mainly used for combinational circuits and arithmetic modules.
+	
+Examples of Data Flow Modeling: assign y1 = i1 & i2;
+                                assign y1 = (i1 & i2) || i3;
+
+Gate Level Modeling
+	• Suitable for simple circuits with a few gates, optimized using Boolean expressions.
+	• Uses logic gates (primitives): AND, NAND, OR, NOR, XOR, XNOR, and pull gates.
+	• Allows multiple input gates and multiple output gates (e.g., buffers, NOT gates).
+	
+Examples of Gate Level Modeling: and ( y1, x1, x2);   // y1 is assigned as and of x1 and x2
+                                  or ( y1, x1, x2);   // y1 is assigned as and of x1 OR x2
