@@ -32,7 +32,6 @@ Components of a Verilog Program
 		○ Maximum length is 1024 characters.
 	• Ports:
 		○ Ports are input/output variables and are crucial for module communication.
-		○ Example: In a block diagram, a module with input ports (IN1, IN2, IN3) and output ports (OUT1, OUT2).
 		○ Ports are like pins on a fabricated chip and come in three types:
 			§ Input
 			§ Output
