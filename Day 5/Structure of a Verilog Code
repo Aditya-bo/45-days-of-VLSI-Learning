@@ -1,0 +1,50 @@
+Introduction to Verilog and HDL 
+	• Verilog is a hardware descriptive language (HDL) used to describe digital systems through text-based code.
+	• It is applicable for designing various systems such as ALUs, timers, counters, microprocessors, shifters, etc.
+	• Once designed, the HDL code can be sent for fabrication, and the design is independent of the technology used (e.g., 90nm, 180nm, 45nm, 22nm, 11nm, 7nm).
+	• Front-end VLSI engineers must understand digital systems, digital design, and HDL.
+	
+Structure of a Verilog Program:
+	• Verilog programs define modules, which are like functions in other programming languages.
+	• A typical Verilog program starts with the keyword module and ends with end module.
+	• Code between these keywords includes:
+		○ Port declaration (input/output ports)
+		○ Declaration of any extra signals
+		○ The relationship between input and output ports.
+	• Template Overview:
+		○ Begin with module and name the module (e.g., full adder, vending machine).
+		○ List input and output ports.
+		○ Declare additional signals if needed.
+		○ If smaller circuits or modules are needed, use module instantiation.
+		○ Describe the system using various Verilog coding styles.
+		○ End with end module.
+		
+Components of a Verilog Program 
+	• Modules:
+		○ A module is a block of Verilog code that implements specific functionality.
+		○ Modules can be nested or combined (e.g., combining 1-bit full adders into a 4-bit adder).
+		○ Modules communicate through input and output ports.
+		○ The module file name should match the module name.
+	• Naming Rules for Modules and Identifiers:
+		○ Must start with an alphabet (uppercase or lowercase) or an underscore.
+		○ Remaining characters can include alphabets, numbers (0-9), underscores, and the dollar sign.
+		○ No other special characters are allowed.
+		○ Maximum length is 1024 characters.
+	• Ports:
+		○ Ports are input/output variables and are crucial for module communication.
+		○ Example: In a block diagram, a module with input ports (IN1, IN2, IN3) and output ports (OUT1, OUT2).
+		○ Ports are like pins on a fabricated chip and come in three types:
+			§ Input
+			§ Output
+			§ IN-OUT (used when feedback is needed).
+	• Assignments:
+		○ Assignments specify how values are assigned to ports or signals.
+		○ Syntax: use the keyword assign, followed by the signal name and its expression.
+		○ Optional parameters include drive strength and delay.
+Sample Verilog Code
+	• Example of a Verilog module for a full adder:
+		○ module full_adder, with three input variables (a, b, c_in) and two output variables (cout, sum).
+		○ Inputs and outputs are defined inside parentheses, followed by a semicolon.
+		○ Use assign statement to assign output as the sum of the inputs.
+		○ Multiple statements can be included before ending the module with end module.
+	• This example demonstrates the basic structure of a Verilog program.
