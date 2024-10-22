@@ -1,0 +1,27 @@
+// Data flow modelling
+module half_adder_data(
+    input a,
+    input b,
+    output sum,
+    output carry
+    );
+    
+    assign sum = a ^ b;
+	assign carry = a & b;
+    
+endmodule
+
+----------------------------------------------------------------------
+
+// Gate flow modelling
+module HA_gate(
+    input a,
+    input b,
+    output sum,
+    output carry
+    );
+    
+ xor (sum, a,b);
+ and (carry, a,b);
+    
+endmodule
