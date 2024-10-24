@@ -1,0 +1,50 @@
+Introduction
+   - Different data types in Verilog, including:
+     - Nets
+     - Registers
+     - Integers and real data types
+     - Non-integer data types
+     - Strings
+   - Data types in Verilog help in designing and describing signals, registers, and wires efficiently.
+   - Verilog has two main categories: nets and registers.
+     - Nets (wires): Carry signals from one point to another, similar to real-world wires carrying voltage or current.
+     - Registers: Store variable values during computations.
+
+Nets and Registers:
+   - Nets:
+     - Represent physical connections between structural entities like ALUs, registers, and flip-flops.
+     - Wires connect these entities and don't store values (except in tri-state registers).
+     - Examples of nets: `wire`, `tri-state`, `tri-state with OR`, `WAND`, `tri-AND`, `tri-0`, `tri-1`, `supply0`, `supply1`, and `tri-state register`.
+     - The most common net type is `wire`, used for inputs or signals driven by devices.
+   - Registers:
+     - Registers hold values and are used in procedural assignments, particularly on the left-hand side of an assignment statement.
+     - Examples: `reg` (register), `integer`, `time`, `real`.
+     - Registers describe logic, integers handle variables and arithmetic, real numbers support decimal calculations, and time stores simulation time.
+     - Registers, such as 4-bit or 8-bit, hold corresponding bit data.
+   - Possible Values in Registers:
+     - 0 (logic 0 or false)
+     - 1 (logic 1 or true)
+     - X (unknown, unassigned value)
+     - Z (high impedance or tri-state, indicates infinite resistance preventing current flow)
+
+Integer and Real Data Types:
+   - Integer data types:
+     - `bit` (single bit value)
+     - `byte` (8 bits)
+     - `short int` (16 bits)
+     - `int` (32 bits, standard integer)
+     - `long int` (64 bits)
+   - Strings:
+     - Stored in register data types.
+     - Strings represent multiple characters, where each character is allocated one byte of memory.
+     - For example, if a string has 10 characters, it requires 10 bytes of memory.
+     - If memory is under-allocated (e.g., 5 bytes for a 10-character string), Verilog truncates from the left.
+     - If memory is over-allocated (e.g., 15 bytes for a 10-character string), Verilog adds extra zeros.
+
+String Example 
+   - Example: reg [8*13:1]str = "learn verilog"
+     - "learn" has 5 characters, "verilog" has 7 characters, and there's a space, making a total of 13 characters.
+     - The register is defined as `8x13` (8 bits for 13 characters), i.e., 13 bytes.
+     - If defined as `8x10`, 3 characters would be lost.
+     - If defined as `8x20`, 7 extra zeros would be appended.
+
