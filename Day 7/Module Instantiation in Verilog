@@ -1,0 +1,45 @@
+Introduction to Module Instantiation
+   - Module instantiation is an essential technique in Verilog.
+   - The goal is to explain what module instantiation is, how to perform it, and the precautions involved.
+   - In complex systems, Verilog uses a top-down or bottom-up approach, where large systems are divided into smaller subsystems. These smaller systems are designed first and then integrated into the main system.
+   - Module instantiation involves designing smaller subsystems and calling them into the top module, similar to function calling in other programming languages.
+
+Methods of Module Instantiation:
+   - Two methods for module instantiation:
+     1. Port connection by ordered list
+     2. Port connection by name
+
+Port Connection by Ordered List:
+   - This method depends on the order of ports defined in the lower module.
+   - In the parent module, the ports must be connected in the exact same order as they were listed in the lower module.
+   - This approach can be confusing and inconvenient, especially if the number of ports is large or if changes occur in the lower module, such as adding more ports.
+   - Example: 
+     - Two subsystems (SUB1 and SUB2) are instantiated in a parent module with three inputs (IN1, IN2, IN3) and two outputs (OUT1, OUT2).
+     - SUB1 has four ports (A, B, C, D). These ports are connected as follows:
+       - A → IN1, B → IN2, C → OUT1, D → S1 (a signal). 
+        - Syntax: sub 1 d0 (IN1 , IN2 , OUT1, S1);
+     - The order of these ports must follow how they were declared in SUB1.
+     - Similarly, SUB2 has ports (P, Q, R), and they are connected as:
+       - P → S1, Q → IN3, R → OUT2.
+        - Syntax: sub 2 d1 (S1 , IN3 , OUT2);
+     - No need to mention the names of A, B, C, D, P, Q, R in the instantiation, just the parent module’s ports.
+
+Port Connection by Name
+   - This method is more convenient as it eliminates the need to remember the exact order of ports.
+   - Instead, port connections are done by specifying the port names.
+   - The syntax involves using a dot (`.`) followed by the port name from the submodule, and in parentheses, the parent module port to which it is connected.
+   - Example:
+     - SUB1 ports (A, B, C, D) are connected to parent module ports as follows:
+       - `.A(IN1), .B(IN2), .C(OUT1), .D(S1)`
+         - Syntax: sub 1 d0 (.A(IN1), .B(IN2), .C(OUT1), .D(S1));
+     - This approach allows for flexible ordering, but care must be taken to match the correct ports.
+     - Similarly, for SUB2:
+       - `.P(S1), .Q(IN3), .R(OUT2)`
+         - Syntax: sub 2 d1 (.P(S1), .Q(IN3), .R(OUT2));
+     - Though this method requires writing more code, it is clearer and avoids confusion.
+
+Handling Unconnected Ports;
+   - When performing module instantiation, all ports should ideally be connected. However, in cases where some ports are unconnected, the simulator assigns them a high impedance value (`Z`).
+   - Verilog supports four value states, and unconnected ports default to the `Z` value.
+
+
