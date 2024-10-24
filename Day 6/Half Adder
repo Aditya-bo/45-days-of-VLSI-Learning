@@ -26,6 +26,8 @@ module HA_gate(
     
 endmodule
 
+----------------------------------------------------------------------
+
 // Testbench
 
 module TB_ha_data();
