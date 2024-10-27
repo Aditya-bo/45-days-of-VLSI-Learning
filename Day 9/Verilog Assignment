@@ -1,1 +1,42 @@
 
+Example:
+reg [15:0]  y1; 
+integer   val_count;
+real  pi_value;     // Declaring variables
+
+initial begin
+      y1 = 16' h00A9;    //Assigning values to 3 variables
+      pi_value = 3.14;
+      val_count = 0;
+end
+
+always @ (negedge clk)
+      val_count++;     //Assigning inside always procedure
+
+
+
+
+module my_fun; 
+reg [15:0]  y1 = 16' h0003;
+    initial
+         y1 = 16' h0004;
+endmodule
+
+
+Example:
+wire p, q, r;
+assign p= q & r;
+
+Exapmle:
+reg y1;
+initial begin
+     assign y1 = 1024;
+     #50 deassign y1;
+    end
+
+Example:
+reg x1, x2, y1, y2;
+initial begin
+       force y1 = x1 ^ x2;
+       force y2 = x1 & x2;
+end
