@@ -1,4 +1,70 @@
+### Detailed Notes on Verilog Assignments Lecture
 
+**Introduction to Verilog Assignments (0:00 - 0:22):**
+- The video introduces the topic of **assignments** in Verilog.
+- Discussion will cover what assignments are and the different types of assignments in Verilog.
+
+**Basic Concept of Verilog Assignments (0:22 - 0:38):**
+- Assignments are used to allocate values to **wires** or **variables**.
+- Assignments consist of two parts: **left-hand side** and **right-hand side**, connected by a relation (e.g., `=` or `<=`).
+- The value on the right-hand side is assigned to the left-hand side.
+
+**Types of Assignments in Verilog (0:38 - 7:05):**
+- There are **three types** of assignments:
+  1. **Procedural assignments**
+  2. **Continuous assignments**
+  3. **Procedural continuous assignments**
+
+**Procedural Assignments:**
+- Used inside **Verilog procedures** (e.g., `initial`, `always`, `task`, `function`).
+- Statements are processed **sequentially** in these procedures.
+- Procedural assignments maintain values until changed by another assignment.
+
+**Example of Procedural Assignment:**
+- **Variables:**
+  - A 16-bit register `y1`.
+  - An integer `val_count`.
+  - A real number `pi_value`.
+- **Initial block:**
+  - `y1` is assigned hexadecimal `00A9`.
+  - `pi_value` is assigned `3.14`.
+  - `val_count` is initialized to `0`.
+- The **always block** updates `val_count` continuously.
+
+**Potential Issues with Procedural Assignments:**
+- If a value is assigned both in the **initial declaration** and in a **procedure**, it may lead to conflicts. There is **no guarantee** of which assignment will take precedence.
+
+**Example of Procedural Assignment Conflict:**
+- A register `y1` is assigned a value `0003` in the declaration and `0004` in the `initial` block. The value that will be assigned is **unpredictable**.
+
+**Continuous Assignments:**
+- **Alternative** to procedural assignments, mainly used for **vector and scalar nets** (e.g., wires).
+- When the value on the right-hand side changes, the left-hand side is updated **immediately**.
+- Continuous assignments are typically used for **combinational logic** modeling without specifying physical gates.
+
+**Example of Continuous Assignment:**
+- Three wires `P`, `Q`, and `R` are declared.
+- The statement `assign P = Q & R;` ensures that the value of `P` updates whenever `Q` or `R` changes.
+
+**Procedural Continuous Assignments:**
+- A combination of procedural and continuous assignments.
+- Supports **continuous assignments** on **variables or nets**.
+  
+**Subtypes of Procedural Continuous Assignments (7:05 - 8:08):**
+1. **Assign and De-assign:**
+   - A value is continuously updated until the `de-assign` statement is used, which fixes the final value.
+   - Example: Register `y1` is assigned `1024`, and after a delay of 50 time units, the value is de-assigned, meaning changes can no longer be made until an external command intervenes.
+   
+2. **Force and Release:**
+   - Similar to **assign and de-assign**, but applicable to both **wires** and **variables**.
+   - Example: XOR of `x1` and `x2` is assigned to `y1`, and the AND of `x1` and `x2` is assigned to `y2`. The `release` of `y1` allows for reassignment in the next iteration, but `y2` will continue calculating.
+
+**Conclusion and Teaser for Next Video (9:32 - 9:52):**
+- The lecture covers three types of assignments (procedural, continuous, and procedural continuous).
+- Two more categories, **blocking** and **non-blocking assignments**, will be discussed in the next video. 
+
+**Final Note:**
+- Students are encouraged to continue learning and stay tuned for further lessons.
 Example:
 reg [15:0]  y1; 
 integer   val_count;
