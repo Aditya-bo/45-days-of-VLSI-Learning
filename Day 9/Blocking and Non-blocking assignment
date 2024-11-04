@@ -1,0 +1,60 @@
+Introduction to Assignments:
+  - Two types of assignments: blocking and non-blocking.
+  - Blocking assignments:
+    - Block the execution of other assignments until the current one is completed.
+    - Uses the `=` operator.
+    - Assignments within parallel blocks are not blocked by other blocking assignments.
+  
+- Example:
+  - A module named 'block' is used as an example.
+  - Five 8-bit registers are declared.
+  - A parallel block is created between `initial begin` and `end`.
+    - First, `x1` is assigned a value of `10` (hexadecimal), which means its first four bits are `0001` and the next four bits are `0000`.
+    - The `$display` command is used to print variable values, although optional.
+    - `x2` is assigned `20` (hexadecimal), where the first four bits are `0010` and the next four bits are `0000`.
+    - The values of `x1`, `x2`, and `x3` are printed.
+    - Finally, `x3` is assigned `30` (hexadecimal), and all three values (`x1`, `x2`, and `x3`) are printed again.
+    - Assignments are done sequentially: first `x1`, then `x2`, and finally `x3`.
+
+  - Parallel block:
+    - Another block assigns values to `y1` and `y2`.
+    - `y1` is assigned `40` and `y2` is assigned `50`.
+    - Both blocks are assigned values at `t=0`.
+  
+  - Output:
+    - As expected, at time `t=0`, `x1` is defined as `10`, while `x2` and `x3` are undefined.
+    - In the next time step, `x1` and `x2` are defined, but `x3` remains undefined.
+    - In the final step, all three values (`x1`, `x2`, and `x3`) are defined.
+    - Parallel Block Execution:
+      - `y1` and `y2` are defined in parallel without depending on the execution of the first block.
+
+- Adding Delays to Blocking Assignments:
+  - The same module and register names are used, but delays are added to the assignments.
+    - `x2` is assigned `20` after a 20-nanosecond delay, and `x3` after 30 nanoseconds.
+    - The second parallel block has a delay of 15 nanoseconds for `y1` and 25 nanoseconds for `y2`.
+
+  - Output with Delays:
+    - Assignments are printed in the order of execution.
+    - Initially, `x1` is assigned `10`.
+    - After a delay of 15 nanoseconds, `y1` is assigned `40`, but `y2` is still undefined.
+    - After 20 nanoseconds, `x2` is assigned `20`, with `x3` still undefined.
+    - After 25 nanoseconds, `y2` is assigned `50`.
+    - After 30 nanoseconds, all variables (`x1`, `x2`, `x3`, `y1`, `y2`) are defined.
+
+- Testing with Vivado:
+  - The same code is written and tested using Vivado.
+  - Ensure that the simulation source is set as the top module.
+  - Behavioral simulation is run, and the output is checked via the TCL console, not the waveform or schematic.
+  
+- Non-blocking Assignments:
+  - Use the `<=` operator, which should not be confused with the relational operator used in conditions.
+  - **Non-blocking assignments** allow scheduling of statements without blocking the execution of other assignments.
+  - All statements in non-blocking assignments begin execution at the same time (parallel processing).
+
+- Example:
+  - The same module, registers, and two parallel blocks are used, but this time, the assignments use the `<=` operator.
+  - Expectation: `x1`, `x2`, and `x3` will be assigned simultaneously, as well as `y1` and `y2`.
+  
+  - Output:
+    - All outputs are undefined (`x`), because all assignments took place at zero nanoseconds, meaning there was no time for the execution to complete.
+    - If delays had been added, results would have been visible, but without delays, no assignments were completed before the display command was executed.
