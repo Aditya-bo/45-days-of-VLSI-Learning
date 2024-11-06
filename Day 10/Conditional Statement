@@ -1,0 +1,14 @@
+Overview of Conditional Statements:
+Conditional statements help determine actions in different scenarios, such as deciding what to do if a signal value is 1 or 0. The 'if statement' is used to express these decisions, where, for example, if a sensor value is true (high), an action is performed. If not, another action can be defined. This basic logic is the foundation of conditional statements.
+
+- If Statement Functionality:
+  The simplest form of a conditional statement is the 'if statement'. When the evaluated expression is true, the block of statements within the if block is executed. If the condition is false, the compiler ignores the code inside the if block.
+
+- Introduction of Else Statement: 
+  The 'else statement' works as a complement to the if statement. If the condition in the 'if' block is false, the code inside the else block is executed. The syntax is straightforward: after the if condition, an action is performed if the condition is true, otherwise, the else block is executed.
+
+- Using Multiple Statements in Conditional Logic:  
+  For multiple actions, 'begin' and 'end' blocks are used around the statements. Typically, the combination of 'if-else' statements is more useful than a standalone if statement. The 'else if' statement allows for multiple conditions to be evaluated. For example, different actions can be performed depending on whether the temperature is less than 35, between 35 and 45, between 45 and 65, or else a default action can be specified.
+
+- Else-if Logic; 
+  The process for multiple comparisons is as follows: the first condition is evaluated, and if true, its block is executed. If not, the next 'else if' condition is evaluated, and so on. If none of the conditions are true, the default else block is executed.
