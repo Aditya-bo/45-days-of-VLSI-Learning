@@ -20,6 +20,25 @@ Introduction to Assignments:
     - Another block assigns values to `y1` and `y2`.
     - `y1` is assigned `40` and `y2` is assigned `50`.
     - Both blocks are assigned values at `t=0`.
+
+CODE:
+module Block;
+  reg [7:0] x1, x2, x3, y1, y2;
+  initial begin
+      x1 = 8'h10;
+      $display ("[%0t] x1=0x%0h  x2=0x%0h  x3=0x%0h", $time, x1, x2, x3);
+      x2 = 8'h20;
+      $display ("[%0t] x1=0x%0h  x2=0x%0h  x3=0x%0h", $time, x1, x2, x3);
+      x3 = 8'h30;
+      $display ("[%0t] x1=0x%0h  x2=0x%0h  x3=0x%0h", $time, x1, x2, x3);
+  end
+ initial begin
+      y1 = 8'h40;
+      $display ("[%0t] y1=0x%0h  y2=0x%0h  x3=0x%0h", $time, y1, y2);
+      y2 = 8'h50;
+      $display ("[%0t] x1=0x%0h  x2=0x%0h  x3=0x%0h', $time, y1, y2);
+  end
+endmodule
   
   - Output:
     - As expected, at time `t=0`, `x1` is defined as `10`, while `x2` and `x3` are undefined.
@@ -28,10 +47,35 @@ Introduction to Assignments:
     - Parallel Block Execution:
       - `y1` and `y2` are defined in parallel without depending on the execution of the first block.
 
+[0] x1=0x10 x2=0xxx x3=0xxx
+[0] x1=0x10 x2=0x20 x3=0xxx
+[0] x1=0x10 x2=0x20 x3=0x30
+[0] y1=0x40 x2=0xxx 
+[0] y1=0x40 y2=0x50
+
 - Adding Delays to Blocking Assignments:
   - The same module and register names are used, but delays are added to the assignments.
     - `x2` is assigned `20` after a 20-nanosecond delay, and `x3` after 30 nanoseconds.
     - The second parallel block has a delay of 15 nanoseconds for `y1` and 25 nanoseconds for `y2`.
+
+CODE:
+module Block;
+  reg [7:0] x1, x2, x3, y1, y2;
+  initial begin
+      x1 = 8'h10;
+      $display ("[%0t] x1=0x%0h  x2=0x%0h  x3=0x%0h", $time, x1, x2, x3);
+      #20 x2 = 8'h20;
+      $display ("[%0t] x1=0x%0h  x2=0x%0h  x3=0x%0h", $time, x1, x2, x3);
+      #30 x3 = 8'h30;
+      $display ("[%0t] x1=0x%0h  x2=0x%0h  x3=0x%0h", $time, x1, x2, x3);
+  end
+ initial begin
+      #15 y1 = 8'h40;
+      $display ("[%0t] y1=0x%0h  y2=0x%0h  x3=0x%0h", $time, y1, y2);
+      #25 y2 = 8'h50;
+      $display ("[%0t] x1=0x%0h  x2=0x%0h  x3=0x%0h', $time, y1, y2);
+  end
+emdmodule
 
   - Output with Delays:
     - Assignments are printed in the order of execution.
@@ -41,6 +85,12 @@ Introduction to Assignments:
     - After 25 nanoseconds, `y2` is assigned `50`.
     - After 30 nanoseconds, all variables (`x1`, `x2`, `x3`, `y1`, `y2`) are defined.
 
+[0] x1=0x10 x2=0xxx x3=0xxx
+[15000] y1=0x40 x2=0xxx 
+[20000] x1=0x10 x2=0x20 x3=0xxx
+[40000] y1=0x40 y2=0x50
+[50000] x1=0x10 x2=0x20 x3=0x30
+
 - Testing with Vivado:
   - The same code is written and tested using Vivado.
   - Ensure that the simulation source is set as the top module.
@@ -48,12 +98,31 @@ Introduction to Assignments:
   
 - Non-blocking Assignments:
   - Use the `<=` operator, which should not be confused with the relational operator used in conditions.
-  - **Non-blocking assignments** allow scheduling of statements without blocking the execution of other assignments.
+  - Non-blocking assignments allow scheduling of statements without blocking the execution of other assignments.
   - All statements in non-blocking assignments begin execution at the same time (parallel processing).
 
 - Example:
   - The same module, registers, and two parallel blocks are used, but this time, the assignments use the `<=` operator.
   - Expectation: `x1`, `x2`, and `x3` will be assigned simultaneously, as well as `y1` and `y2`.
+
+CODE:
+module Block;
+  reg [7:0] x1, x2, x3, y1, y2;
+  initial begin
+      x1 <= 8'h10;
+      $display ("[%0t] x1=0x%0h  x2=0x%0h  x3=0x%0h", $time, x1, x2, x3);
+      x2 <= 8'h20;
+      $display ("[%0t] x1=0x%0h  x2=0x%0h  x3=0x%0h", $time, x1, x2, x3);
+      x3 <= 8'h30;
+      $display ("[%0t] x1=0x%0h  x2=0x%0h  x3=0x%0h", $time, x1, x2, x3);
+  end
+ initial begin
+      y1 <= 8'h40;
+      $display ("[%0t] y1=0x%0h  y2=0x%0h  x3=0x%0h", $time, y1, y2);
+      y2 <= 8'h50;
+      $display ("[%0t] x1=0x%0h  x2=0x%0h  x3=0x%0h', $time, y1, y2);
+  end
+endmodule
   
   - Output:
     - All outputs are undefined (`x`), because all assignments took place at zero nanoseconds, meaning there was no time for the execution to complete.
