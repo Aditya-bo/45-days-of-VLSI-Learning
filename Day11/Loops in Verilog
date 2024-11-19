@@ -1,1 +1,41 @@
+Introduction to Loops:
+Loops are used when we need to repeat a set of instructions multiple times, either for a fixed or infinite number of times.
+Verilog supports four types of loops: forever, repeat, while, and for. All loops perform similar tasks but in different ways.
 
+Forever Loop (1:30 - 2:09):
+This loop is used to execute a set of instructions infinitely. It is similar to an infinite loop in other programming languages.
+The disadvantage of the forever loop is that it cannot be synthesized into hardware because "infinity" is not a valid concept in hardware design.
+It is, however, useful for simulation purpose.
+
+Syntax:
+forever begin
+  // statements to be executed infinite times
+end
+
+Repeat Loop:
+The repeat loop is used when the number of iterations is known beforehand. It executes a block of code for a fixed number of times.
+Unlike the forever loop, the repeat loop can be synthesized since the number of iterations is explicitly mentioned.
+
+Syntax:
+repeat (<number_of_repetitions>) begin
+  // statements to be executed in the repeat loop
+end
+
+While Loop:
+The while loop continues to execute as long as a certain condition is true.
+It can potentially lead to an infinite loop if the condition is never met, similar to an if-else statement.
+The while loop cannot be synthesized if it results in infinite iterations.
+
+Syntax:
+while <condition_to_be_true> begin
+  //statement to be executed in while loop
+end
+
+For Loop:
+The for loop is widely used and allows for executing a block of code for a fixed number of iterations by specifying a starting condition, a stopping condition, and an increment step.
+The for loop can be synthesized into hardware because the number of iterations is fixed.
+
+Syntax:
+for (<initial condition>; <stopping condition>; <increment>) begin 
+  // statement to be executed in the for loop
+end.
