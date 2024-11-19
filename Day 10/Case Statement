@@ -1,1 +1,41 @@
+Case statements are used to handle multiple conditions in a concise manner, offering an alternative to the traditional if-else ladder.
 
+Why Use Case Statements?
+Case statements are useful when dealing with multiple true conditions, which would otherwise require multiple else if statements.
+
+Syntax:
+The syntax starts with the keyword case and ends with end case. Conditions (sensitive ports or input variables) are written inside the parentheses are tested, and the corresponding block of code is executed.
+A default case is also defined, specifying actions when none of the previous conditions are true.
+
+case(list of sensitive ports)
+<case1> : <statement>
+<case2> : <statement>
+........
+defualt : <statement for the defualt case>
+endcase
+
+Example: Implementing a Half-Adder:
+
+A half-adder is implemented using the case statement, where inputs A and B are tested for various binary combinations.
+The case statement concatenates A and B using curly brackets {} and then specifies the output for each case.
+Each case is written in a single line, and a register is used for outputs since the value is being stored.
+
+Four cases are defined for the half-adder:
+For 00, sum = 0 and carry = 0.
+For 01, sum = 1 and carry = 0.
+For 10, sum = 1 and carry = 0.
+For 11, sum = 1 and carry = 1.
+
+Code:
+module HA_case1(input wire A,B,
+             output reg S,
+             output reg Cout);
+always @(A or B)
+   begin
+   case ({A,B})
+       2'b00: begin S=0; Cout=0; end
+       2'b01: begin S=1; Cout=0; end
+       2'b10: begin S=1; Cout=0; end
+       2'b11: begin S=0; Cout=1; end
+   endcase
+end
