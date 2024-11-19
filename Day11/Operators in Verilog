@@ -1,1 +1,43 @@
+Categories of Operators in Verilog:
 
+Arithmetic Operators:
+Perform mathematical operations between one or more operands.
+Examples:
+Addition (+): y = a + b
+Subtraction (-): y = a - b
+Multiplication (*): y = a * b
+Division (/): y = a / b
+Modulo (%): Used to find the remainder.
+Exponentiation (**): Performs power operations.
+
+Relational Operators:
+Compare two operands and are often used in conditional statements.
+Examples:
+Less than (<), Greater than (>), Less than or equal to (<=), Greater than or equal to (>=).
+These operators help in creating conditions like if (a < 5) or if (5 >= b).
+
+Equality Operators:
+Used to check for equality between operands, considering Verilog’s four logic values (0, 1, x, z).
+Examples:
+Strict equality (===): Compares both logic values and unknown values (x, z).
+Equality (==): Compares only 0 and 1 values.
+Inequality (!=): Compares 0 and 1 values.
+Strict inequality (!==): Compares 0, 1, x, and z.
+
+Logical Operators:
+Perform logical operations like AND, OR, and NOT.
+Examples:
+Logical AND (&&), Logical OR (||), and Logical NOT (!).
+
+Bitwise Operators:
+Perform operations at the bit level, such as AND, OR, XOR, and XNOR.
+Examples:
+Bitwise AND (&), Bitwise OR (|), Bitwise XOR (^), and Bitwise XNOR (~^ or ^~).
+These operators compute bitwise results and store them in a register.
+
+Shift Operators:
+Shift data bits left or right.
+Examples:
+Logical left shift (<<) and logical right shift (>>).
+Arithmetic left shift (<<<) and arithmetic right shift (>>>).
+For example, a << 2 shifts the bits of a by 2 to the left, and b >> 3 shifts the bits of b by 3 to the right.
