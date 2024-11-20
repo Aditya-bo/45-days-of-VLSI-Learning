@@ -1,1 +1,24 @@
+There are two types of digital circuits: 
+combinational circuits and sequential circuits. Combinational circuits, unlike sequential circuits, do not have memory, and their output is determined solely by the current input values. They are constructed from logic gates such as AND, OR, NOT, NAND, NOR, XOR, and XNOR. These circuits are commonly used for arithmetic operations like addition, multiplication, shifting, and comparison.
 
+The instructor highlights that combinational circuits can be described using three methods: Boolean algebra, truth tables, and logic diagrams.
+
+Boolean Algebra: Boolean algebra involves expressions that describe the relationship between input and output variables using operations like AND, OR, and INVERT (NOT). These are the basic operations in Boolean algebra, and all other logic gates are derived from combinations of these operations. For example, a NAND gate is a combination of AND followed by NOT, and a NOR gate is a combination of OR followed by NOT.
+
+Truth Tables: Truth tables provide a tabular method for representing Boolean functions of combinational circuits. The instructor explains that for a system with two inputs, there are 
+2
+2
+=
+4
+2 
+2
+ =4 input cases, and for three inputs, there are 
+2
+3
+=
+8
+2 
+3
+ =8 cases. The truth table shows how the outputs relate to the inputs, with 1 representing "true" and 0 representing "false." The instructor goes over an example of how to obtain Boolean expressions from a truth table by focusing on cases where the output is true (1) and representing the Boolean expression in two ways: product of sums and sum of products.
+
+Logic Diagrams: Once Boolean expressions are derived, they can be transformed into logic diagrams. Logic diagrams represent the circuit visually with logic gates corresponding to the expressions. The instructor walks through an example of how a Boolean expression is translated into a logic diagram using NOT, AND, and OR gates.
