@@ -1,1 +1,45 @@
+Combinational circuit design flow is a five-step process.
 
+Step 1: System Specification
+In this step, the designer identifies the number of input and output variables required. The user may not always specify these details, so the designer must determine the optimal number of inputs and outputs. Additionally, invalid conditions—cases where certain inputs or outputs cannot occur—must be identified.
+
+Step 2: Generating the Truth Table
+The next step involves generating the truth table based on the input variables. For any system with 
+𝑛
+n input variables, there will be 
+2
+𝑛
+2 
+n
+  possible input cases. The outputs corresponding to each input case are tabulated, providing a complete overview of the system’s functionality. For example, with three inputs 
+𝑥
+1
+x 
+1
+​
+ , 
+𝑥
+2
+x 
+2
+​
+ , and 
+𝑥
+3
+x 
+3
+​
+ , there will be eight possible cases. Based on the truth table, the Boolean expressions are then derived.
+
+Step 3: Obtaining Boolean Expressions
+Whenever the output is 1, these cases are referred to as minterms. The Boolean expression is obtained as a sum of products of these minterms. Conversely, zeros in the truth table can be used to derive the Boolean expression in the form of a product of sums. These methods were covered in the previous video.
+
+Step 4: Minimizing Boolean Expressions
+Once the Boolean expressions are obtained, they need to be minimized to reduce the number of logic gates required in the final design. This step is essential because using more literals (variables) and operators (AND, OR) will increase the complexity and number of gates in the circuit. The goal is to obtain an optimized Boolean expression that uses the minimum number of gates.
+
+There are two primary methods for minimization:
+
+Using Boolean algebra postulates and theorems—a manual, pen-and-paper approach where the designer applies Boolean theorems to simplify the expression.
+Using Karnaugh maps (K-maps)—a graphical method that provides a more efficient way to minimize Boolean expressions. The instructor mentions that examples and practice problems for both methods will be provided in the resources.
+Step 5: Designing the Logic Diagram
+The final step is to map the minimized Boolean expression into a logic diagram. In the diagram, AND operations (products) are represented by AND gates, OR operations (sums) by OR gates, and NOT operations by NOT gates. If the expression includes other gates, such as XOR, XNOR, NAND, or NOR, these can also be used when converting the Boolean expression into a logic diagram.
